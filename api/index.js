@@ -153,6 +153,21 @@ app.get("/me", (req, res) => {
   });
 });
 
+app.get("/privacy", (req, res) => {
+  res.send(`
+    <html>
+      <head><title>Privacy Policy</title></head>
+      <body style="font-family: sans-serif; max-width: 700px; margin: 40px auto; padding: 20px;">
+        <h1>Privacy Policy</h1>
+        <p>This OAuth server is used only for authentication purposes with ChatGPT Actions.</p>
+        <p>We do not collect, store, or share any personal data beyond what is necessary for the OAuth flow.</p>
+        <p>Access tokens and refresh tokens are stored temporarily and used solely to authenticate API requests.</p>
+        <p>Last updated: August 2026</p>
+      </body>
+    </html>
+  `);
+});
+
 // Health check
 app.get("/", (req, res) => {
   res.json({
